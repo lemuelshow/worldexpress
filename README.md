@@ -26,3 +26,11 @@ O banco (`server/data/worldexpress.db`) é criado com ~5 meses de dados fictíci
 6. **Relatórios** — produção por entregador, por serviço/veículo, diária, extrato do entregador, vales/ajustes, pagamentos e resumo mensal (CSV e impressão).
 
 O valor unitário é gravado em cada lançamento: mudar a tabela de preços não altera o histórico.
+
+## Deploy (Render)
+
+- **Build command:** `npm run build` (instala `server/` e `web/` e gera o build do React)
+- **Start command:** `npm start` (a API serve também o front; usa a variável `PORT` do Render)
+- **Variáveis de ambiente:**
+  - `JWT_SECRET` — obrigatório trocar em produção
+  - `DB_FILE` — caminho do banco SQLite. No Render o disco é apagado a cada deploy/reinício; para manter os dados, crie um **Persistent Disk** (ex.: montado em `/var/data`) e use `DB_FILE=/var/data/worldexpress.db`
