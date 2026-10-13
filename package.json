@@ -1,0 +1,16 @@
+{
+  "name": "worldexpress",
+  "version": "1.0.0",
+  "private": true,
+  "description": "WorldExpress - controle de produção e pagamento de entregadores",
+  "scripts": {
+    "setup": "npm install && npm --prefix server install && npm --prefix web install",
+    "dev": "concurrently -n api,web -c magenta,green \"npm --prefix server run dev\" \"npm --prefix web run dev\"",
+    "build": "npm --prefix web run build",
+    "start": "npm --prefix server start",
+    "seed": "npm --prefix server run seed"
+  },
+  "devDependencies": {
+    "concurrently": "9.1.0"
+  }
+}
