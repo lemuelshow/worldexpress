@@ -1,6 +1,6 @@
 import { useCallback, useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { CalendarDays, Lock, Printer, Trash2, Truck } from 'lucide-react';
+import { CalendarDays, Lock, Printer, Trash2 } from 'lucide-react';
 import { api, carregarOpcoes, qs } from '../api.js';
 import { Badge, Card, Empty, Loading, PageHeader, useToast } from '../components/ui.jsx';
 import { brl, dataBR, DIAS_SEMANA, hojeISO, mesAtual, num, VEICULOS } from '../format.js';
@@ -33,7 +33,7 @@ function Impressao({ rows, f, entregadores }) {
   return (
     <div className="print-only print-report">
       <header>
-        <div className="recibo-brand"><span className="brand-logo"><Truck size={18} /></span><b>World<strong>Express</strong></b></div>
+        <div className="recibo-brand"><img src="/logo.png" alt="WorldExpress Logística" /></div>
         <div className="r">
           <h3>Relatório de lançamentos</h3>
           <span className="muted small">Emitido em {dataBR(hojeISO())} às {agora.toTimeString().slice(0, 5)}</span>

@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from 'react';
 import { NavLink, Outlet, useLocation, useNavigate } from 'react-router-dom';
-import { Bell, ChevronDown, LogOut, Menu, Plus, Truck, UserCircle2 } from 'lucide-react';
+import { Bell, ChevronDown, LogOut, Menu, Plus, UserCircle2 } from 'lucide-react';
 import { sessao } from '../api.js';
 import { PERFIS } from '../format.js';
 
@@ -45,8 +45,7 @@ export default function Layout() {
     <div className="app">
       <header className="topbar" ref={navRef}>
         <NavLink to="/" className="brand" aria-label="WorldExpress - início">
-          <span className="brand-logo"><Truck size={19} /></span>
-          <span className="brand-name">World<b>Express</b></span>
+          <img src="/logo-branca.png" alt="WorldExpress Logística" className="brand-img" />
         </NavLink>
 
         <button className="burger" onClick={() => setMobile(!mobile)} aria-label="Abrir menu"><Menu size={22} /></button>
@@ -73,7 +72,7 @@ export default function Layout() {
 
         <div className="topbar-right">
           <button className="btn btn-success btn-sm" onClick={() => navigate('/lancar')}>
-            <Plus size={16} /> Lançar dia
+            <Plus size={16} /> <span className="hide-xs">Lançar dia</span>
           </button>
           <button className="icon-btn light" title="Pagamentos pendentes" onClick={() => navigate('/fechamentos')}>
             <Bell size={18} />

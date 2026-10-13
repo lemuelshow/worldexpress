@@ -1,6 +1,5 @@
 import { useState } from 'react';
 import { Navigate, useNavigate } from 'react-router-dom';
-import { Truck } from 'lucide-react';
 import { api, sessao } from '../api.js';
 
 export default function Login() {
@@ -31,8 +30,7 @@ export default function Login() {
     <div className="login-page">
       <form className="login-card" onSubmit={entrar}>
         <div className="login-brand">
-          <span className="brand-logo big"><Truck size={28} /></span>
-          <h1>World<b>Express</b></h1>
+          <img src="/logo.png" alt="WorldExpress Logística" className="login-logo" />
           <p className="muted">Controle de produção e pagamento de entregadores</p>
         </div>
         <div className="field">

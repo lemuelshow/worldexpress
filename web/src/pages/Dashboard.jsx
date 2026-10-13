@@ -7,9 +7,9 @@ import { Empty, Loading, useToast } from '../components/ui.jsx';
 import { addMes, brl, dataBR, MESES_CURTOS, mesAtual, nomeMes, num, periodo, VEICULOS } from '../format.js';
 import { IconeVeiculo } from './Entregadores.jsx';
 
-const CORES = { producao: '#22C1DC', pago: '#2ECC87', adiantamentos: '#FFC90E' };
+const CORES = { producao: '#37467F', pago: '#2ECC87', adiantamentos: '#FFC90E' };
 const LEGENDA = [['producao', 'Produção'], ['pago', 'Pago'], ['adiantamentos', 'Adiantamentos']];
-const BLOCOS = ['bg-cyan', 'bg-orange', 'bg-pink', 'bg-purple'];
+const BLOCOS = ['bg-indigo', 'bg-orange', 'bg-cyan', 'bg-purple'];
 
 function TooltipMoeda({ active, payload, label }) {
   if (!active || !payload?.length) return null;
@@ -121,7 +121,7 @@ export default function Dashboard() {
                     <XAxis dataKey="nome" tickLine={false} axisLine={false} tick={{ fill: '#8A94A6', fontSize: 11 }} />
                     <YAxis tickLine={false} axisLine={false} tick={{ fill: '#8A94A6', fontSize: 11 }} tickFormatter={v => `${(v / 1000).toFixed(1)}k`} />
                     <Tooltip content={<TooltipMoeda />} cursor={{ fill: 'rgba(108,43,217,.06)' }} />
-                    <Bar dataKey="valor" name="Produção" fill="#6C2BD9" isAnimationActive={false} radius={[3, 3, 0, 0]} maxBarSize={16} />
+                    <Bar dataKey="valor" name="Produção" fill="#00295F" isAnimationActive={false} radius={[3, 3, 0, 0]} maxBarSize={16} />
                   </BarChart>
                 </ResponsiveContainer>
               )}
@@ -135,7 +135,7 @@ export default function Dashboard() {
                     <span className="with-icon small"><b className="rank-pos">{i + 1}</b><IconeVeiculo veiculo={r.veiculo} size={13} />{r.nome}</span>
                     <span className="small"><b>{brl(r.valor)}</b> <span className="muted">· {num(r.quantidade, 0)} itens · {r.dias}d</span></span>
                   </div>
-                  <div className="hbar-track"><i style={{ width: `${(r.valor / maxRank) * 100}%`, background: r.veiculo === 'moto' ? '#FF9F43' : '#22C1DC' }} /></div>
+                  <div className="hbar-track"><i style={{ width: `${(r.valor / maxRank) * 100}%`, background: r.veiculo === 'moto' ? '#F75C0A' : '#37467F' }} /></div>
                 </div>
               ))}
             </div>

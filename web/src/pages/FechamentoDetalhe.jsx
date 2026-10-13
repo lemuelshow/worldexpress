@@ -1,6 +1,6 @@
 import { useCallback, useEffect, useState } from 'react';
 import { Link, useNavigate, useParams } from 'react-router-dom';
-import { ArrowLeft, CircleDollarSign, Printer, ReceiptText, Trash2, Truck, Undo2 } from 'lucide-react';
+import { ArrowLeft, CircleDollarSign, Printer, ReceiptText, Trash2, Undo2 } from 'lucide-react';
 import { api } from '../api.js';
 import { Badge, Card, Loading, Modal, PageHeader, useToast } from '../components/ui.jsx';
 import { brl, dataBR, FORMAS_PAGAMENTO, hojeISO, num, periodo, TIPOS_AJUSTE, VEICULOS } from '../format.js';
@@ -54,7 +54,7 @@ function Recibo({ alvo, onClose }) {
       {!d ? <Loading /> : (
         <div className="recibo">
           <header>
-            <div className="recibo-brand"><span className="brand-logo"><Truck size={18} /></span><b>World<strong>Express</strong></b></div>
+            <div className="recibo-brand"><img src="/logo.png" alt="WorldExpress Logística" /></div>
             <div className="r">
               <h3>Recibo de pagamento</h3>
               <span className="muted">Período {periodo(d.fechamento.inicio, d.fechamento.fim)}</span>
